@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2021-09-07T16:45:06-06:00">2021-09-07T16:45:06-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2021-09-07T16:53:54-06:00">2021-09-07T16:53:54-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -43,8 +43,8 @@
   </div>
 
   <div class="t-line-summary">
-    <b>210</b> relevant lines,
-    <span class="green"><b>210</b> lines covered</span> and
+    <b>211</b> relevant lines,
+    <span class="green"><b>211</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed. </span>
     (<span class="green">
   100.0%
@@ -359,9 +359,9 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#5b1eb13b73423f33b389063c76bf7572583b30d3" class="src_link" title="spec/models/merchant_spec.rb">spec/models/merchant_spec.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">5</td>
-            <td class="cell--number">3</td>
-            <td class="cell--number">3</td>
+            <td class="cell--number">7</td>
+            <td class="cell--number">4</td>
+            <td class="cell--number">4</td>
             <td class="cell--number">0</td>
             <td class="cell--number">1.00</td>
             
@@ -4173,7 +4173,7 @@
 
             
 
-            <code class="ruby">    xit { should belong_to(:merchant) }</code>
+            <code class="ruby">    xit { should belong_to :merchant }</code>
           </li>
         </div>
       
@@ -4218,8 +4218,8 @@
     
 
     <div class="t-line-summary">
-      <b>3</b> relevant lines.
-      <span class="green"><b>3</b> lines covered</span> and
+      <b>4</b> relevant lines.
+      <span class="green"><b>4</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -4259,7 +4259,7 @@
 
             
 
-            <code class="ruby">RSpec.describe Merchant, type: :model do</code>
+            <code class="ruby">RSpec.describe Merchant do</code>
           </li>
         </div>
       
@@ -4270,12 +4270,34 @@
 
             
 
-            <code class="ruby">  pending &quot;add some examples to (or delete) #{__FILE__}&quot;</code>
+            <code class="ruby">  describe &#39;associations&#39; do </code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="5">
+          <li class="covered" data-hits="1" data-linenumber="5">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    xit { should have_many :items }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="6">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="7">
             
             
 
