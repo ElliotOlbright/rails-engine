@@ -13,12 +13,12 @@ describe "Merchants API" do
 
 
 
-    merchants.each do |m|
+    merchants[:data].each do |m|
       expect(m).to have_key(:id)
-      expect(m[:id]).to be_an(Integer)
+      expect(m[:id]).to be_a(String)
 
-      expect(m).to have_key(:name)
-      expect(m[:name]).to be_a(String)
+      expect(m[:attributes]).to have_key(:name)
+      expect(m[:attributes][:name]).to be_a(String)
     end
   end
 
@@ -31,11 +31,11 @@ describe "Merchants API" do
   
     expect(response).to be_successful
   
-    expect(merchant).to have_key(:id)
-    expect(merchant[:id]).to eq(id)
+    expect(merchant[:data]).to have_key(:id)
+    expect(merchant[:data][:id]).to be_a(String)
   
-    expect(merchant).to have_key(:name)
-    expect(merchant[:name]).to be_a(String)
+    expect(merchant[:data][:attributes]).to have_key(:name)
+    expect(merchant[:data][:attributes][:name]).to be_a(String)
   end
 
   it "can get a merchants items" do 

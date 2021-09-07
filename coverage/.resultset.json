@@ -549,6 +549,8 @@
           null,
           1,
           1,
+          1,
+          1,
           null,
           null,
           1,
@@ -577,11 +579,21 @@
           null,
           1,
           1,
+          1,
           null,
           null,
           1,
           1,
+          1,
           null,
+          null
+        ]
+      },
+      "/Users/elliotolbright/turing/mod3/projects/rails-engine/app/serializers/merchant_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          1,
           null
         ]
       },
@@ -596,6 +608,6 @@
         ]
       }
     },
-    "timestamp": 1631055234
+    "timestamp": 1631057349
   }
 }
