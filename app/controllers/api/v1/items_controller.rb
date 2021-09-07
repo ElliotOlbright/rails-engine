@@ -1,11 +1,13 @@
 class Api::V1::ItemsController < ApplicationController 
   
   def index 
-    render json: Item.all
+    items = Item.paginate(page: params[:page], per_page: 20)
+    render json: ItemSerializer.new(items)
   end 
 
   def show 
-    render json: Item.find(params[:id])
+    item = Item.find(params[:id])
+    render json: ItemSerializer.new(item)
   end
 
   def create
@@ -19,7 +21,7 @@ class Api::V1::ItemsController < ApplicationController
   def destroy 
     render json: Item.destroy(params[:id])
   end 
-  
+
   private 
 
   def item_params

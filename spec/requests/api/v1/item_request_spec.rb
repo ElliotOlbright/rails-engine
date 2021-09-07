@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe "Item API" do
   it "sends a list of items" do
-    create_list(:item, 3)
+    create_list(:item, 1)
 
     get '/api/v1/items'
 
@@ -10,17 +10,17 @@ describe "Item API" do
 
     items = JSON.parse(response.body, symbolize_names: true)
 
-    expect(items.count).to eq(3)
+    expect(items.count).to eq(1)
 
-    items.each do |i|
+    items[:data].each do |i|
       expect(i).to have_key(:id)
-      expect(i[:id]).to be_an(Integer)
+      expect(i[:id]).to be_an(String)
 
-      expect(i).to have_key(:description)
-      expect(i[:description]).to be_a(String)
+      expect(i[:attributes]).to have_key(:description)
+      expect(i[:attributes][:description]).to be_a(String)
 
-      expect(i).to have_key(:unit_price)
-      expect(i[:unit_price]).to be_an(Float)
+      expect(i[:attributes]).to have_key(:unit_price)
+      expect(i[:attributes][:unit_price]).to be_an(Float)
     end 
   end
 
@@ -32,18 +32,18 @@ describe "Item API" do
     item = JSON.parse(response.body, symbolize_names: true)
   
     expect(response).to be_successful
+
+    expect(item[:data]).to have_key(:id)
+    expect(item[:data][:id]).to be_a(String)
   
-    expect(item).to have_key(:id)
-    expect(item[:id]).to be_an(Integer)
+    expect(item[:data][:attributes]).to have_key(:name)
+    expect(item[:data][:attributes][:name]).to be_a(String)
   
-    expect(item).to have_key(:name)
-    expect(item[:name]).to be_a(String)
+    expect(item[:data][:attributes]).to have_key(:description)
+    expect(item[:data][:attributes][:description]).to be_a(String)
   
-    expect(item).to have_key(:description)
-    expect(item[:description]).to be_a(String)
-  
-    expect(item).to have_key(:unit_price)
-    expect(item[:unit_price]).to be_a(Float)
+    expect(item[:data][:attributes]).to have_key(:unit_price)
+    expect(item[:data][:attributes][:unit_price]).to be_a(Float)
   end
 
   it "can create a new item" do

@@ -37,6 +37,8 @@ group :development, :test do
   gem 'simplecov' 
   gem 'shoulda-matchers'
   gem 'pry'
+  gem 'will_paginate', '~> 3.1.0'
+  gem 'fast_jsonapi'
 end
 
 group :development do
