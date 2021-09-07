@@ -13,9 +13,28 @@ describe "Merchants API" do
 
 
 
-    # merchants.each do |m|
-    #   expect(m).to have_key(:id)
-    #   expect(m[:id]).to be_an(Integer)
-    # end
+    merchants.each do |m|
+      expect(m).to have_key(:id)
+      expect(m[:id]).to be_an(Integer)
+
+      expect(m).to have_key(:name)
+      expect(m[:name]).to be_a(String)
+    end
+  end
+
+  it "can get one book by its id" do
+    id = create(:merchant).id
+  
+    get "/api/v1/merchants/#{id}"
+  
+    merchant = JSON.parse(response.body, symbolize_names: true)
+  
+    expect(response).to be_successful
+  
+    expect(merchant).to have_key(:id)
+    expect(merchant[:id]).to eq(id)
+  
+    expect(merchant).to have_key(:name)
+    expect(merchant[:name]).to be_a(String)
   end
 end 
