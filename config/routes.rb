@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :customers, only: [:index]
       resources :merchants, only: [:index, :show]
-      resources :items, only: [:index, :show, :create]
+      resources :items, only: [:index, :show, :create, :update, :destroy]
     end
   end
 end
