@@ -63,4 +63,22 @@ describe "Merchants API" do
       expect(item[:attributes][:unit_price]).to be_a(Float)
     end
   end
+
+  it 'can find one merchant based on search criteria' do 
+    merchant1 = create(:merchant, name: "222")
+    merchant2 = create(:merchant)
+    merchant3 = create(:merchant)
+
+    get "/api/v1/merchants/find?name=222"
+
+    merchant = JSON.parse(response.body, symbolize_names: true)
+
+    expect(response).to be_successful
+
+    expect(merchant[:data].first).to have_key(:id)
+    expect(merchant[:data].first[:id]).to be_a(String)
+
+    expect(merchant[:data].first[:attributes]).to have_key(:name)
+    expect(merchant[:data].first[:attributes][:name]).to be_a(String)
+  end 
 end 
