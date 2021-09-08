@@ -218,9 +218,9 @@
         "lines": [
           1,
           1,
-          15,
-          15,
-          15,
+          25,
+          25,
+          25,
           1,
           null,
           null
@@ -230,7 +230,7 @@
         "lines": [
           1,
           1,
-          20,
+          21,
           null,
           null
         ]
@@ -247,6 +247,7 @@
           1,
           null,
           null,
+          1,
           1,
           null,
           null,
@@ -438,6 +439,25 @@
           1,
           2,
           null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
           null
         ]
       },
@@ -573,6 +593,24 @@
           null
         ]
       },
+      "/Users/elliotolbright/turing/mod3/projects/rails-engine/app/controllers/api/v1/items/merchant_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/elliotolbright/turing/mod3/projects/rails-engine/app/serializers/merchant_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
       "/Users/elliotolbright/turing/mod3/projects/rails-engine/app/controllers/api/v1/merchants_controller.rb": {
         "lines": [
           1,
@@ -589,14 +627,6 @@
           null
         ]
       },
-      "/Users/elliotolbright/turing/mod3/projects/rails-engine/app/serializers/merchant_serializer.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null
-        ]
-      },
       "/Users/elliotolbright/turing/mod3/projects/rails-engine/app/controllers/api/v1/merchants/items_controller.rb": {
         "lines": [
           1,
@@ -608,6 +638,6 @@
         ]
       }
     },
-    "timestamp": 1631057349
+    "timestamp": 1631121309
   }
 }
