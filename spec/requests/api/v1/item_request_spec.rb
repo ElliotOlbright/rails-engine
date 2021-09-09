@@ -120,4 +120,35 @@ describe "Item API" do
     expect(merchant[:data][:attributes]).to have_key(:name)
     expect(merchant[:data][:attributes][:name]).to be_a(String)
   end
+
+  it 'can return all items with a partial name' do 
+    merchant = create(:merchant)
+    item1 = create(:item, name: "222", description: "1234", unit_price: 10.99, merchant_id: merchant.id)
+    item2 = create(:item, name: "223", description: "1234", unit_price: 10.99, merchant_id: merchant.id)
+    item3 = create(:item, name: "224", description: "1234", unit_price: 10.99, merchant_id: merchant.id)
+    item4 = create(:item, name: "225", description: "1234", unit_price: 10.99, merchant_id: merchant.id)
+    item5 = create(:item, name: "226", description: "1234", unit_price: 10.99, merchant_id: merchant.id)
+    item6 = create(:item, name: "337", description: "1234", unit_price: 10.99, merchant_id: merchant.id)
+    item7 = create(:item, name: "357", description: "1234", unit_price: 10.99, merchant_id: merchant.id)
+    item8 = create(:item, name: "6547", description: "1234", unit_price: 10.99, merchant_id: merchant.id)
+
+    get "/api/v1/items/find_all?name=2"
+
+    items = JSON.parse(response.body, symbolize_names: true)
+
+    expect(response).to be_successful
+
+    expect(items[:data].count).to eq(5)
+
+    items[:data].each do |i|
+      expect(i).to have_key(:id)
+      expect(i[:id]).to be_an(String)
+
+      expect(i[:attributes]).to have_key(:description)
+      expect(i[:attributes][:description]).to be_a(String)
+
+      expect(i[:attributes]).to have_key(:unit_price)
+      expect(i[:attributes][:unit_price]).to be_an(Float)
+    end 
+  end
 end

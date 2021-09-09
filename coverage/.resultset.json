@@ -230,7 +230,7 @@
         "lines": [
           1,
           1,
-          23,
+          24,
           null,
           null
         ]
@@ -242,6 +242,10 @@
           1,
           1,
           1,
+          null,
+          1,
+          1,
+          null,
           null,
           1,
           1,
@@ -462,6 +466,37 @@
           1,
           1,
           null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          5,
+          5,
+          null,
+          5,
+          5,
+          null,
+          5,
+          5,
+          null,
+          null,
           null
         ]
       },
@@ -643,6 +678,30 @@
           null
         ]
       },
+      "/Users/elliotolbright/turing/mod3/projects/rails-engine/app/controllers/api/v1/items/search_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          0,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/elliotolbright/turing/mod3/projects/rails-engine/app/models/search.rb": {
+        "lines": [
+          1,
+          1,
+          2,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/elliotolbright/turing/mod3/projects/rails-engine/app/controllers/api/v1/merchants_controller.rb": {
         "lines": [
           1,
@@ -683,18 +742,8 @@
           null,
           null
         ]
-      },
-      "/Users/elliotolbright/turing/mod3/projects/rails-engine/app/models/search.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null,
-          null,
-          null
-        ]
       }
     },
-    "timestamp": 1631200125
+    "timestamp": 1631205801
   }
 }
