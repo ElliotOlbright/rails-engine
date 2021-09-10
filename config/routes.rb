@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
       namespace :merchants do  
         get 'find', to: "search#show"
+        get 'most_items', to: 'items_sold#index'
       end 
 
       namespace :items do 
